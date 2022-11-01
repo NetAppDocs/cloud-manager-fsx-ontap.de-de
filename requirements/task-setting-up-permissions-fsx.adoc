@@ -1,0 +1,114 @@
+---
+sidebar: sidebar 
+permalink: requirements/task-setting-up-permissions-fsx.html 
+keywords: fsx for ontap, iam, user role, permissions, aws govcloud, govcloud, credentials 
+summary: Um Ihre Arbeitsumgebung Amazon FSX für ONTAP zu erstellen oder zu managen, benötigen Sie einen AWS-Zugriffsschlüssel und einen geheimen Schlüssel für eine IAM-Benutzerrolle mit FSX für ONTAP-Berechtigungen. 
+---
+= Einrichten von Berechtigungen für FSX für ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um eine Arbeitsumgebung von Amazon FSX für ONTAP zu erstellen oder zu managen, müssen Sie BlueXP Zugangsdaten für AWS Zugangsdaten hinzufügen, indem Sie das ARN einer IAM-Rolle bereitstellen, sodass BlueXP die nötigen Berechtigungen zur Erstellung einer FSX für ONTAP Arbeitsumgebung erteilt.
+
+
+
+== Einrichten der IAM-Rolle
+
+Richten Sie eine IAM-Rolle ein, mit der BlueXP die Rolle übernehmen kann.
+
+.Schritte
+. Wechseln Sie im Zielkonto zur IAM-Konsole.
+. Klicken Sie unter Zugriffsverwaltung auf *Rollen > Rolle erstellen* und befolgen Sie die Schritte zum Erstellen der Rolle.
++
+Gehen Sie wie folgt vor:
+
++
+** Wählen Sie unter *Vertrauenswürdiger Entitätstyp* *AWS-Konto* aus.
+** Wählen Sie *ein weiteres AWS-Konto* und geben Sie die ID von BlueXP ein.
++
+*** Für BlueXP SaaS: 952013314444
+*** Für AWS GovCloud (USA): 033442085313
+
+
+** Erstellen Sie eine Richtlinie, die die folgenden Berechtigungen enthält:
++
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "fsx:*",
+                "ec2:Describe*",
+                "ec2:CreateTags",
+                "kms:Describe*",
+                "kms:List*",
+                "kms:CreateGrant",
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+----
++
+Sehen Sie sich die Richtlinie zur Bereitstellung von Konnektor über die an link:https://mysupport.netapp.com/site/info/cloud-manager-policies["Seite „BlueXP Policies“"].
+
+
+
+. Kopieren Sie die Rolle ARN der IAM-Rolle, sodass Sie sie im nächsten Schritt in BlueXP einfügen können.
+
+
+Die IAM-Rolle verfügt nun über die erforderlichen Berechtigungen.
+
+
+
+== Fügen Sie die Anmeldeinformationen hinzu
+
+Nachdem Sie die IAM-Rolle mit den erforderlichen Berechtigungen angegeben haben, fügen Sie die Rolle ARN zu BlueXP hinzu.
+
+Wenn Sie gerade die IAM-Rolle erstellt haben, kann es ein paar Minuten dauern, bis sie zur Verwendung verfügbar sind. Warten Sie einige Minuten, bevor Sie BlueXP die Anmeldeinformationen hinzufügen.
+
+.Schritte
+. Klicken Sie oben rechts in der BlueXP-Konsole auf das Symbol Einstellungen und wählen Sie *Anmeldeinformationen*.
++
+image:screenshot_settings_icon.gif["Ein Screenshot, in dem das Symbol Einstellungen oben rechts in der BlueXP-Konsole angezeigt wird."]
+
+. Klicken Sie auf *Anmeldeinformationen hinzufügen* und befolgen Sie die Schritte im Assistenten.
++
+.. *Anmeldeort*: Wählen Sie *Amazon Web Services > BlueXP*.
+.. *Anmeldedaten definieren*: Geben Sie den ARN (Amazon Resource Name) der IAM-Rolle an.
++
+[NOTE]
+====
+*** Wenn Sie ein AWS GovCloud (US) Konto nutzen, überprüfen Sie *Ich verwende ein AWS GovCloud (US) Konto*.
++
+image:screenshot-govcloud-checkbox.png["Screenshot des Kontrollkästchens für das GovCloud (US) Konto"]
+
+*** Bei der Authentifizierung mithilfe von AWS GovCloud wird die SaaS-Plattform deaktiviert. Dies ist eine permanente Änderung Ihres Kontos und kann nicht rückgängig gemacht werden.
+
+
+====
+.. *Review*: Bestätigen Sie die Angaben zu den neuen Anmeldedaten und klicken Sie auf *Hinzufügen*.
+
+
+
+
+Sie können die Anmeldeinformationen jetzt verwenden, wenn Sie eine FSX für ONTAP-Arbeitsumgebung erstellen.
+
+
+
+== Weiterführende Links
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["AWS Zugangsdaten und Berechtigungen"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["Management der AWS Credentials für BlueXP"^]
+

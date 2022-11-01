@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: start/task-getting-started-fsx.html 
+keywords: amazon fsx for ontap, fsx, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, bluexp website, get started, network, vpn, tier, tiering, storage tier, data tier, granting, permissions, policy, iam policy, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, create 
+summary: Erste Schritte mit Amazon FSX für ONTAP 
+---
+= Erste Schritte mit Amazon FSX für ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erste Schritte mit Amazon FSX für ONTAP
+
+Ihr Einstieg mit FSX für ONTAP ist in nur wenigen Schritten möglich.
+
+[role="quick-margin-para"]
+Sie müssen eine Amazon FSX für ONTAP-Arbeitsumgebung erstellen, bevor Sie Volumes hinzufügen. Das müssen Sie link:../requirements/task-setting-up-permissions-fsx.html["Richten Sie eine IAM-Rolle ein, mit der BlueXP SaaS die Rolle übernehmen kann"].
+
+[role="quick-margin-para"]
+Sie müssen eine haben https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["Connector für AWS"^] So öffnen Sie die FSX für die Arbeitsumgebung von ONTAP: Erstellen Sie Volumes oder führen Sie andere Aktionen durch. Wenn ein Connector erforderlich ist, werden Sie von BlueXP aufgefordert, wenn einer noch nicht hinzugefügt wurde.
+
+[role="quick-margin-para"]
+Sie können mithilfe von BlueXP FSX für ONTAP Volumes erstellen.
+
+[role="quick-margin-para"]
+Mit BlueXP können Sie Ihre Volumes verwalten und zusätzliche Services wie Replikation, Cloud Sync und Data Sense konfigurieren.
+
+.Weiterführende Links
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["Erstellen eines Connectors von BlueXP"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html["Einführen eines Connectors über den AWS Marketplace"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["Installieren der Connector-Software auf einem Linux-Host"^]
+

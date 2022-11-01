@@ -1,0 +1,121 @@
+---
+sidebar: sidebar 
+permalink: use/task-manage-fsx-volumes.html 
+keywords: fsx for ontap, fsx, aws, delete volumes, delete nfs volumes, delete cifs volumes, tiering policy, mount path, get mount path, mount volume, delete volumes, snapshots, edit volume, clone volume, clone 
+summary: Sie können Volumes, Klone und Snapshots managen und die Tiering-Richtlinien für FSX für ONTAP mithilfe von BlueXP ändern. 
+---
+= Management von Volumes für Amazon FSX für ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Volumes, Klone und Snapshots anzeigen und managen sowie Tiering-Richtlinien für FSX für ONTAP mithilfe von BlueXP ändern.
+
+
+
+== Zeigen Sie Volume-Details an
+
+Nachdem Sie ein Volume erstellt haben, können Sie die Konfigurationsdetails anzeigen.
+
+. Öffnen Sie die Arbeitsumgebung.
++
+
+NOTE: Sie können mit dem Mauszeiger auf den Volume-Namen zeigen, um den Volume-Typ anzuzeigen.
+
+. Öffnen Sie die Registerkarte Volume und wählen Sie *Lautstärke verwalten*, um das Menü *Volume Actions* zu öffnen.
+. Wählen Sie *Volumendetails anzeigen*.
+
+
+
+
+== Volumes bearbeiten
+
+Nachdem Sie ein Volume erstellt haben, können Sie es jederzeit ändern.
+
+.Schritte
+. Öffnen Sie die Arbeitsumgebung.
+. Öffnen Sie die Registerkarte Volume und wählen Sie *Lautstärke verwalten*, um das Menü *Volume Actions* zu öffnen.
+. Wählen Sie *Lautstärkeeinstellungen bearbeiten* aus.
++
+.. Für NFS können Sie die Größe und die Tags ändern.
+.. Für CIFS können Sie den Freigabennamen, die Benutzer, die Berechtigungen und die Snapshot-Richtlinie nach Bedarf ändern.
+
+
+. Wählen Sie *Anwenden*.
+
+
+
+
+== Volumes klonen
+
+Nachdem Sie ein Volume erstellt haben, können Sie aus einem neuen Snapshot ein neues Lese- und Schreib-Volume erstellen.
+
+.Schritte
+. Öffnen Sie die Arbeitsumgebung.
+. Öffnen Sie die Registerkarte Volume und wählen Sie *Lautstärke verwalten*, um das Menü *Volume Actions* zu öffnen.
+. Wählen Sie *Clone the Volume*.
+. Geben Sie einen Namen für das geklonte Volume ein.
+. Wählen Sie *Clone*.
+
+
+
+
+== Verwalten von Snapshot Kopien
+
+Snapshot Kopien erstellen eine zeitpunktgenaue Kopie des Volume. Erstellung von Snapshot Kopien und Wiederherstellung der Daten auf einem neuen Volume
+
+.Schritte
+. Öffnen Sie die Arbeitsumgebung.
+. Öffnen Sie die Registerkarte Volume und wählen Sie *Volume verwalten*, um das Menü *Protection Actions* zu öffnen.
+. Wählen Sie eine der verfügbaren Optionen zum Managen von Snapshot Kopien aus:
++
+** *Erstellen Sie eine Snapshot Kopie*
+** *Wiederherstellen aus einer Snapshot Kopie*
+
+
+. Befolgen Sie die Anweisungen, um die ausgewählte Aktion abzuschließen.
+
+
+
+
+== Ändern Sie die Tiering Policy
+
+Ändern Sie die Tiering-Richtlinie für das Volume.
+
+.Schritte
+. Öffnen Sie die Arbeitsumgebung.
+. Öffnen Sie die Registerkarte Volume und wählen Sie *Lautstärke verwalten*, um das Menü *Erweiterte Aktionen* zu öffnen.
+. Wählen Sie *Tiering Policy ändern*.
+. Wählen Sie eine neue Volume Tiering Policy und klicken Sie auf *Ändern*.
+
+
+
+
+== Datenreplizierung und -Synchronisierung
+
+Mithilfe von BlueXP können Sie Daten zwischen Speicherumgebungen replizieren. Informationen zur Konfiguration von FSX für ONTAP-Replikation finden Sie unter https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["Replizierung von Daten zwischen Systemen"^].
+
+Sie können Synchronisierungsbeziehungen unter Verwendung von Cloud Sync in BlueXP erstellen. Informationen zum Konfigurieren von Synchronisierungsbeziehungen finden Sie unter https://docs.netapp.com/us-en/cloud-manager-sync/task-creating-relationships.html["Erstellung von Synchronisierungsbeziehungen"^].
+
+
+
+== Volumes löschen
+
+Löschen Sie die Volumes, die Sie nicht mehr benötigen.
+
+Ein Volume, das zuvor zu einer SnapMirror Beziehung unter Verwendung von BlueXP gehörte, kann nicht gelöscht werden. SnapMirror Volumes müssen mit der AWS Management Console oder CLI gelöscht werden.
+
+.Schritte
+. Öffnen Sie die Arbeitsumgebung.
+. Öffnen Sie die Registerkarte Volume und wählen Sie *Lautstärke verwalten*, um das Menü *Volume Actions* zu öffnen.
+. Wählen Sie *Lautstärke löschen*.
+. Geben Sie den Namen der Arbeitsumgebung ein und bestätigen Sie, dass Sie das Volume löschen möchten. Es kann bis zu einer Stunde dauern, bis das Volume vollständig aus BlueXP entfernt wurde.
+
+
+
+NOTE: Wenn Sie versuchen, ein geklontes Volume zu löschen, erhalten Sie einen Fehler.

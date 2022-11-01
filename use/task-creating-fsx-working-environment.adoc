@@ -1,0 +1,168 @@
+---
+sidebar: sidebar 
+permalink: use/task-creating-fsx-working-environment.html 
+keywords: amazon fsx for ontap, fsx, volumes, create working environment, delete working environment, access key, secret key, region, working environment, availability zones, discover, storage capacity, iops, throughput 
+summary: Mit BlueXP können Sie eine FSX für ONTAP-Arbeitsumgebungen erstellen oder erkennen, um Volumes und zusätzliche Datenservices hinzuzufügen und zu managen. 
+---
+= Erstellen oder Erkennen Sie eine Arbeitsumgebung von Amazon FSX für ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe von BlueXP können Sie eine FSX für ONTAP-Arbeitsumgebung erstellen und erkennen, in der Volumes und zusätzliche Datenservices hinzugefügt und gemanagt werden können.
+
+
+
+== Amazon FSX für ONTAP-Arbeitsumgebungen erstellen
+
+Im ersten Schritt wird ein FSX für die ONTAP-Arbeitsumgebung erstellt. Wenn Sie bereits ein FSX für ONTAP-Dateisystem in der AWS-Verwaltungskonsole erstellt haben, können Sie dies tun link:task-creating-fsx-working-environment.html#discover-an-existing-fsx-for-ontap-file-system["Entdecken Sie es mit BlueXP"].
+
+Bevor Sie Ihre FSX für ONTAP-Arbeitsumgebung in BlueXP erstellen, benötigen Sie Folgendes:
+
+* Das ARN einer IAM-Rolle, die BlueXP die erforderlichen Berechtigungen für die Erstellung eines FSX für die ONTAP-Arbeitsumgebung bietet. Siehe link:../requirements/task-setting-up-permissions-fsx.html["Hinzufügen von AWS Zugangsdaten zu BlueXP"] Entsprechende Details.
+* Die Region und VPN-Informationen, für die Sie die FSX für ONTAP-Instanz erstellen möchten.
+
+
+.Schritte
+. Fügen Sie in BlueXP eine neue Arbeitsumgebung hinzu, wählen Sie den Standort *Amazon Web Services* aus und klicken Sie auf *Weiter*.
+. Wählen Sie *Amazon FSX für ONTAP* und klicken Sie auf *Weiter*.
++
+image:screenshot_add_fsx_working_env.png["Screenshot, wie eine Arbeitsumgebung für Amazon FSX für ONTAP hinzugefügt wird"]
+
+. Authentifizierung von FSX für ONTAP in BlueXP
++
+.. Wenn in Ihrem Konto eine IAM-Rolle vorhanden ist, die die korrekten AWS-Berechtigungen für FSX für ONTAP enthält, wählen Sie diese aus dem Dropdown-Menü aus.
++
+image:screenshot-fsx-assume-role-present.png["Screenshot mit Dropdown-Menü für AWS Rollen"]
+
+.. Wenn Ihr Konto keine IAM-Rolle enthält, klicken Sie auf *Credentials Page* und befolgen Sie die Schritte im Assistenten, um ein ARN für eine AWS IAM-Rolle mit FSX for ONTAP-Anmeldeinformationen hinzuzufügen. Siehe link:../requirements/task-setting-up-permissions-fsx.html["Hinzufügen von AWS Zugangsdaten zu BlueXP"] Entsprechende Details.
++
+image:screenshot-fsx-assume-role-not-present.png["Einen Screenshot der Schritte zum Hinzufügen des ARN für eine AWS IAM-Rolle mit FSX for ONTAP-Berechtigung."]
+
+
+
+. Geben Sie Informationen zu Ihrer FSX für ONTAP-Instanz an:
++
+.. Geben Sie den Namen der Arbeitsumgebung ein, die Sie verwenden möchten.
+.. Optional können Sie Tags erstellen, indem Sie auf das Pluszeichen klicken und einen Tag-Namen und -Wert eingeben.
+.. Geben Sie das ONTAP-Cluster-Passwort ein, das Sie verwenden möchten, und bestätigen Sie es.
+.. Wählen Sie die Option aus, um dasselbe Passwort für Ihren SVM-Benutzer zu verwenden, oder legen Sie ein anderes Passwort fest.
+.. Klicken Sie Auf *Weiter*.
++
+image:screenshot_add_fsx_credentials.png["Screenshot mit den Anmeldeinformationen für FSX für ONTAP"]
+
+
+
+. Regionale und VPC-Informationen angeben:
++
+.. Wählen Sie ein HA-Implementierungsmodell mit *Single Availability Zone* oder *Multiple Availability Zones* aus.
++
+image:screenshot-ha-deployment-models.png["Ein Screenshot der Auswahlschaltflächen für Bereitstellungsmodelle für einzelne oder mehrere Verfügbarkeitszonen."]
+
+.. Wählen Sie eine Region und eine VPC aus.
++
+[NOTE]
+====
+Wählen Sie bei mehreren Verfügbarkeitszonen Subnetze in mindestens zwei Verfügbarkeitszonen aus, damit sich jeder Knoten in einer dedizierten Verfügbarkeitszone befindet.
+
+image:screenshot_add_fsx_region.png["Screenshot mit dem Hinzufügen einer Region und einem VPC für FSX für ONTAP"]
+
+====
+.. Akzeptieren Sie die Standardsicherheitsgruppe, oder wählen Sie eine andere aus. link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules.html["AWS Sicherheitsgruppen"^] Steuern des ein- und ausgehenden Datenverkehrs. Diese werden von Ihrem AWS Administrator konfiguriert und Ihrem zugeordnet link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html["Elastische AWS Netzwerkschnittstelle (ENI)"^].
+.. Klicken Sie Auf *Weiter*.
+
+
+. Lassen Sie _CIDR-Bereich_ leer, und klicken Sie auf *Weiter*, um automatisch einen verfügbaren Bereich festzulegen. Optional können Sie verwenden https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html["AWS Transit Gateway"^] Um einen Bereich manuell zu konfigurieren.
++
+image:screenshot_add_fsx_floatingIP.png["Screenshot mit dem Hinzufügen einer Region und einem VPC für FSX für ONTAP"]
+
+. Wählen Sie Routingtabellen aus, die Routen zu den unverankerten IP-Adressen enthalten. Wenn Sie nur eine Routingtabelle für die Subnetze in Ihrem VPC (der Hauptroutingtabelle) haben, fügt BlueXP automatisch die fließenden IP-Adressen zu dieser Routingtabelle hinzu. Klicken Sie auf *Weiter*, um fortzufahren.
++
+image:screenshot_add_fsx_route_table.png["Ein Screenshot der Auswahl einer Routentabelle für FSX für ONTAP"]
+
+. Akzeptieren Sie den Standard-AWS-Master-Schlüssel oder klicken Sie auf *Change Key*, um einen anderen AWS Customer Master Key (CMK) auszuwählen. Weitere Informationen zu CMK finden Sie unter https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/https://docs.netapp.com/us-en/occm/task-setting-up-kms.html["Einrichten des AWS KMS"^]. Klicken Sie auf *Weiter*, um fortzufahren.
++
+image:screenshot_add_fsx_encryption.png["Ein Screenshot, wie die Standard-Master-Taste für FSX für ONTAP eingestellt wird"]
+
+. Storage konfigurieren:
++
+.. Wählen Sie Durchsatz, Kapazität und Einheit aus. Sie können den Durchsatz- und Storage-Kapazitätswert jederzeit ändern.
+.. Optional können Sie einen IOPS-Wert angeben. Wenn Sie keinen IOPS-Wert angeben, wird bei BlueXP der Standardwert auf 3 IOPS pro gib der eingegebenen Gesamtkapazität festgelegt. Wenn Sie beispielsweise 2000 gib für die Gesamtkapazität und keinen Wert für die IOPS eingeben, wird der effektive IOPS-Wert auf 6000 festgelegt. Sie können den IOPS-Wert jederzeit ändern.
++
+
+WARNING: Wenn Sie einen IOPS-Wert angeben, der die Mindestanforderungen nicht erfüllt, wird beim Hinzufügen der Arbeitsumgebung ein Fehler angezeigt.image:screenshot_fsx_working_environment_failed_iops.png["Ein Screenshot der Fehlermeldung, wenn ein falscher IOPS-Wert festgelegt ist."]
+
+.. Klicken Sie Auf *Weiter*.image:screenshot_add_fsx_storage_config.png["Screenshot mit dem Einstellen der Speicherkonfiguration für FSX für ONTAP"]
+
+
+. Überprüfen Sie Ihre Konfiguration:
++
+.. Klicken Sie auf die Registerkarten, um Ihre ONTAP-Eigenschaften, die Anbietereigenschaften und die Netzwerkkonfiguration zu überprüfen.
+.. Klicken Sie auf *Zurück*, um Änderungen an den Einstellungen vorzunehmen.
+.. Klicken Sie auf *Hinzufügen*, um die Einstellungen zu übernehmen und Ihre Arbeitsumgebung zu erstellen.
++
+image:screenshot_add_fsx_review.png["Ein Screenshot der Einstellungen für FSX für ONTAP"]
+
+
+
+
+
+BlueXP zeigt Ihre FSX für ONTAP-Konfiguration auf der Seite „Canvas“ an.
+
+image:screenshot_add_fsx_cloud.png["Einen Screenshot von Amazon FSX for ONTAP auf der Seite Arbeitsumgebungen."]
+
+Sie können jetzt mit BlueXP Volumes zu Ihrer FSX für ONTAP Arbeitsumgebung hinzufügen.
+
+
+
+== Erkennung eines vorhandenen FSX für ONTAP-Dateisystems
+
+Wenn Sie ein FSX für ONTAP-Dateisystem mithilfe der AWS-Verwaltungskonsole erstellt haben oder eine zuvor entfernte Arbeitsumgebung wiederherstellen möchten, können Sie es anhand von **My Opportunities** oder manuell entdecken.
+
+
+
+=== Entdecken Sie unter Verwendung von My Opportunities
+
+Wenn Sie zuvor Ihre AWS Zugangsdaten für BlueXP zur Verfügung gestellt haben, kann *My Opportunities* FSX für ONTAP Dateisysteme automatisch erkennen und vorschlagen, mit BlueXP hinzuzufügen und zu verwalten. Sie können auch verfügbare Datenservices prüfen.
+
+.Schritte
+. Klicken Sie in BlueXP auf die Registerkarte *Meine Chancen*.
+. Die Anzahl der ermittelten FSX für ONTAP-Dateisysteme wird angezeigt. Klicken Sie Auf *Entdecken*.
++
+image:screenshot-opportunities.png["Einen Screenshot der Seite „My Opportunities“ für FSX für ONTAP."]
+
+. Wählen Sie ein oder mehrere Dateisysteme aus, und klicken Sie auf *Entdecken*, um sie dem Bildschirm hinzuzufügen.
+
+
+[NOTE]
+====
+* Wenn Sie ein nicht benanntes Cluster auswählen, erhalten Sie eine Eingabeaufforderung zur Eingabe eines Namens für das Cluster.
+* Wenn Sie einen Cluster auswählen, der nicht über die erforderlichen Anmeldeinformationen verfügt, damit BlueXP das Dateisystem FSX für ONTAP verwalten kann, erhalten Sie eine Aufforderung zur Auswahl der Anmeldeinformationen mit den erforderlichen Berechtigungen.
+
+
+====
+
+
+=== Manuell ermitteln
+
+Sie können manuell ein FSX für ONTAP-Dateisystem entdecken, das Sie mit der AWS-Verwaltungskonsole hinzugefügt haben oder das Sie zuvor aus BlueXP entfernt haben.
+
+.Schritte
+. Klicken Sie in BlueXP auf *Arbeitsumgebung hinzufügen* und wählen Sie *Amazon Web Services*.
+. Wählen Sie *Amazon FSX für ONTAP* und klicken Sie *Klicken Sie hier*.
++
+image:screenshot_fsx_working_environment_discover.png["Screenshot der Erkennung einer Arbeitsumgebung für Amazon FSX für ONTAP"]
+
+. Wählen Sie vorhandene Anmeldedaten aus, oder erstellen Sie neue Anmeldedaten. Klicken Sie Auf *Weiter*.
+. Wählen Sie die AWS-Region und die Arbeitsumgebung aus, die Sie hinzufügen möchten.
+. Klicken Sie Auf *Hinzufügen*.
+
+
+BlueXP zeigt Ihr ermittelte FSX für ONTAP-Dateisystem an.
+
+image:screenshot_fsx_working_environment_select.png["Ein Screenshot zur Auswahl der AWS Region und der Arbeitsumgebung"]
