@@ -24,6 +24,7 @@ Die Sicherheitsgruppe FSX für ONTAP erfordert sowohl ein- als auch ausgehende R
 
 image:diagram-fsx-security-groups.png["Ein Diagramm von FSX für die Konfiguration von ONTAP-Sicherheitsgruppen."]
 
+.Bevor Sie beginnen
 Sie müssen die mit dem Enis verbundenen Sicherheitsgruppen über die AWS Management Console suchen.
 
 .Schritte

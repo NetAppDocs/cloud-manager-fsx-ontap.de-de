@@ -22,15 +22,19 @@ Erste Schritte mit Amazon FSX für ONTAP
 
 Wird Verwendet link:https://docs.netapp.com/us-en/cloud-manager-family/["BlueXP"^], Sie können mit FSX für ONTAP in nur wenigen Schritten beginnen.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] FSX für ONTAP-Arbeitsumgebungen erstellen
 [role="quick-margin-para"]
 Sie müssen eine Amazon FSX für ONTAP-Arbeitsumgebung erstellen, bevor Sie Volumes hinzufügen. Das müssen Sie link:../requirements/task-setting-up-permissions-fsx.html["Richten Sie eine IAM-Rolle ein, mit der BlueXP SaaS die Rolle übernehmen kann"].
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Einen Konnektor erstellen
 [role="quick-margin-para"]
 Sie müssen eine haben https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["Connector für AWS"^] So öffnen Sie die FSX für die Arbeitsumgebung von ONTAP: Erstellen Sie Volumes oder führen Sie andere Aktionen durch. Wenn ein Connector erforderlich ist, werden Sie von BlueXP aufgefordert, wenn einer noch nicht hinzugefügt wurde.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Volumes hinzufügen
 [role="quick-margin-para"]
 Sie können mithilfe von BlueXP FSX für ONTAP Volumes erstellen.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"] Managen Sie Ihre Volumes
 [role="quick-margin-para"]
 Mit BlueXP können Sie Ihre Volumes verwalten und zusätzliche Services wie Replikation, Cloud Sync und Data Sense konfigurieren.
 

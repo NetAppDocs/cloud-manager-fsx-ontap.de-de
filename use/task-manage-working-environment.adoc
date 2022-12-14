@@ -22,6 +22,7 @@ Mit BlueXP können Sie Ihre FSX für ONTAP Arbeitsumgebung managen. Sie können 
 
 Sie können die Durchsatzkapazität jederzeit ändern, nachdem Sie die FSX für ONTAP Arbeitsumgebung erstellt haben.
 
+.Bevor Sie beginnen
 Sie benötigen eine aktive https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["Anschluss in AWS"^].
 
 .Schritte
@@ -40,6 +41,7 @@ image:screenshot-change-thruput.png["Ein Screenshot der Position des Menüs „D
 
 Sie können die Storage-Kapazität und IOPS jederzeit ändern, nachdem Sie die FSX für ONTAP Arbeitsumgebung erstellt haben.
 
+.Bevor Sie beginnen
 Sie benötigen eine aktive https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["Anschluss in AWS"^].
 
 .Schritte

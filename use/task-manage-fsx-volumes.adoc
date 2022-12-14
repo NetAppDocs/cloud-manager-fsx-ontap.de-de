@@ -108,6 +108,7 @@ Sie können Synchronisierungsbeziehungen unter Verwendung von Cloud Sync in Blue
 
 Löschen Sie die Volumes, die Sie nicht mehr benötigen.
 
+.Bevor Sie beginnen
 Ein Volume, das zuvor zu einer SnapMirror Beziehung unter Verwendung von BlueXP gehörte, kann nicht gelöscht werden. SnapMirror Volumes müssen mit der AWS Management Console oder CLI gelöscht werden.
 
 .Schritte

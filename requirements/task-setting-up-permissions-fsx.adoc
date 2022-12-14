@@ -68,6 +68,7 @@ Sehen Sie sich die Richtlinie zur Bereitstellung von Konnektor über die an link
 . Kopieren Sie die Rolle ARN der IAM-Rolle, sodass Sie sie im nächsten Schritt in BlueXP einfügen können.
 
 
+.Ergebnis
 Die IAM-Rolle verfügt nun über die erforderlichen Berechtigungen.
 
 
@@ -76,6 +77,7 @@ Die IAM-Rolle verfügt nun über die erforderlichen Berechtigungen.
 
 Nachdem Sie die IAM-Rolle mit den erforderlichen Berechtigungen angegeben haben, fügen Sie die Rolle ARN zu BlueXP hinzu.
 
+.Bevor Sie beginnen
 Wenn Sie gerade die IAM-Rolle erstellt haben, kann es ein paar Minuten dauern, bis sie zur Verwendung verfügbar sind. Warten Sie einige Minuten, bevor Sie BlueXP die Anmeldeinformationen hinzufügen.
 
 .Schritte
@@ -103,6 +105,7 @@ image:screenshot-govcloud-checkbox.png["Screenshot des Kontrollkästchens für d
 
 
 
+.Ergebnis
 Sie können die Anmeldeinformationen jetzt verwenden, wenn Sie eine FSX für ONTAP-Arbeitsumgebung erstellen.
 
 
