@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/task-manage-working-environment.html 
-keywords: amazon fsx for ontap, fsx, manage working environment, delete working environment, remove working environment, throughput capacity, change throughput, 
-summary: Mit BlueXP können Sie Ihre FSX für ONTAP Arbeitsumgebung managen. Sie können Durchsatz und Storage-Kapazität sowie IOPS ändern und die Arbeitsumgebung entfernen oder löschen. 
+keywords: amazon fsx for ontap, fsx, manage working environment, delete working environment, remove working environment, throughput capacity, change throughput, automatic capacity management, capacity management, storage capacity 
+summary: Mit BlueXP können Sie Ihre FSX für ONTAP Arbeitsumgebung managen. Sie ermöglichen automatisches Kapazitätsmanagement, ändern Durchsatz und Storage-Kapazität sowie IOPS und entfernen oder löschen die Arbeitsumgebung. 
 ---
 = Management einer Amazon FSX für ONTAP-Arbeitsumgebung
 :hardbreaks:
@@ -14,7 +14,58 @@ summary: Mit BlueXP können Sie Ihre FSX für ONTAP Arbeitsumgebung managen. Sie
 
 
 [role="lead"]
-Mit BlueXP können Sie Ihre FSX für ONTAP Arbeitsumgebung managen. Sie können Durchsatz und Storage-Kapazität sowie IOPS ändern und die Arbeitsumgebung entfernen oder löschen.
+Mit BlueXP können Sie Ihre FSX für ONTAP Arbeitsumgebung managen. Sie ermöglichen automatisches Kapazitätsmanagement, ändern Durchsatz und Storage-Kapazität sowie IOPS und entfernen oder löschen die Arbeitsumgebung.
+
+
+
+== Managen der automatischen Kapazität
+
+Sie können das automatische Kapazitätsmanagement aktivieren, um inkrementellen Speicher je nach Bedarf hinzuzufügen. Automatisches Kapazitätsmanagement fragt das Cluster in regelmäßigen Abständen ab, um den Bedarf zu bewerten, und erhöht die Storage-Kapazität automatisch in Schritten von 10 % bis zu 80 % der maximalen Kapazität des Clusters.
+
+
+NOTE: Wenn Sie beim Erstellen der Arbeitsumgebung nicht manuell einen IOPS-Wert angegeben haben, erhöht BlueXP den IOPS-Wert um 3 IOPS pro gib der neuen Gesamtkapazität. Wenn Sie einen IOPS-Wert angegeben haben, passt BlueXP die IOPS nicht an. Details zur Konfiguration von IOPS finden Sie unter link:task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-ontap-working-environment["Schaffen Sie eine Arbeitsumgebung"].
+
+Das automatische Kapazitätsmanagement ist standardmäßig deaktiviert. Sie können automatische Kapazitäten mit oder ohne einen aktiven Connector in AWS verwalten.
+
+
+
+=== Verwalten der automatischen Kapazität ohne aktiven Anschluss
+
+Sie können automatische Kapazität ohne einen aktiven Connector in AWS verwalten.
+
+.Schritte
+. Öffnen Sie die FSX für die ONTAP-Arbeitsumgebung.
+. Wählen Sie das Menüsymbol (image:icon-three-dots.png["Bild des Menüsymbols für drei Punkte."]) Und wählen Sie *Automatische Kapazität verwalten*.
++
+image:screenshot-auto-capacity-no-connector.png["Screenshot des Menüs Automatische Kapazität verwalten."]
+
+. Auf der Seite *Automatic Capacity Management*:
++
+** Wählen Sie das Feld aus, um die automatische Kapazitätsverwaltung zu aktivieren.
+** Deaktivieren Sie das Kontrollkästchen, um das automatische Kapazitätsmanagement zu deaktivieren, wenn es zuvor aktiviert wurde.
+
+
+. Wählen Sie *Anwenden*.
+
+
+
+
+=== Verwalten Sie die automatische Kapazität mit einem aktiven Konnektor
+
+Verwalten Sie die automatische Kapazität mit einem aktiven Connector in AWS.
+
+.Schritte
+. Öffnen Sie die FSX für die ONTAP-Arbeitsumgebung.
+. Wählen Sie auf der Registerkarte *Übersicht* die Option *Funktionen*.
+. Wählen Sie das Bleistiftsymbol (image:icon-pencil.png["Bild des Bleistiftbearbeitungssymbols."]) Um die Seite *Automatische Kapazitätsverwaltung* zu öffnen.
+. Auf der Seite *Automatic Capacity Management*:
++
+** Wählen Sie das Feld aus, um die automatische Kapazitätsverwaltung zu aktivieren.
+** Deaktivieren Sie das Kontrollkästchen, um das automatische Kapazitätsmanagement zu deaktivieren, wenn es zuvor aktiviert wurde.
+
+
+. Wählen Sie *Anwenden*.
+
 
 
 
