@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
   <head class="at-element-marker">
-  <title>Erste Schritte mit Amazon FSX für ONTAP | NetApp Documentation</title>
+  <title>Schnellstart für Amazon FSX für ONTAP | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Erste Schritte mit Amazon FSX für ONTAP | NetApp Documentation" />
+  <meta property="og:title" content="Schnellstart für Amazon FSX für ONTAP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/de-de/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html" />
-	<meta property="og:description" content="Erste Schritte mit Amazon FSX für ONTAP" />
+	<meta property="og:description" content="Mit BlueXP können Sie FSX für ONTAP in nur wenigen Schritten einsetzen." />
   <meta property="og:image" content="https://docs.netapp.com/de-de/cloud-manager-fsx-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Erste Schritte mit Amazon FSX für ONTAP">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Mit BlueXP können Sie FSX für ONTAP in nur wenigen Schritten einsetzen.">
   <meta name="keywords" content=" amazon fsx for ontap, fsx, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, bluexp website, get started, network, vpn, tier, tiering, storage tier, data tier, granting, permissions, policy, iam policy, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, create"><!-- Icons -->
   <link rel="icon" href="/de-de/cloud-manager-fsx-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -160,7 +160,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-fsx-ontap/issues/new?body=Page%3A%20[Erste Schritte mit Amazon FSX für ONTAP](https://docs.netapp.com/de-de/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/de-de/cloud-manager-fsx-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Dokumentationsänderungen beantragen</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-fsx-ontap/blob/main/start/task-getting-started-fsx.adoc" class="page-nav-contribute-link" role="button"><img src="/de-de/cloud-manager-fsx-ontap/images/edit-sm.svg" alt="" class="github-icon" />In GitHub bearbeiten</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/de-de/cloud-manager-fsx-ontap/images/article-sm.svg" alt="" class="github-icon" />Leitfaden für Beitragende</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-fsx-ontap/issues/new?body=Page%3A%20[Schnellstart für Amazon FSX für ONTAP](https://docs.netapp.com/de-de/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/de-de/cloud-manager-fsx-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Dokumentationsänderungen beantragen</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-fsx-ontap/blob/main/start/task-getting-started-fsx.adoc" class="page-nav-contribute-link" role="button"><img src="/de-de/cloud-manager-fsx-ontap/images/edit-sm.svg" alt="" class="github-icon" />In GitHub bearbeiten</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/de-de/cloud-manager-fsx-ontap/images/article-sm.svg" alt="" class="github-icon" />Leitfaden für Beitragende</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">AUF DIESER SEITE</div>
@@ -701,14 +701,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Erste Schritte mit Amazon FSX für ONTAP</h1>
+  <h1 class="n-doc__component-detail-heading">Schnellstart für Amazon FSX für ONTAP</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-12-14 18:28:21 +0000">12/14/2022</time>
+    <time datetime="2023-01-03 15:25:22 +0000">01/03/2023</time>
     
   
 
@@ -718,50 +718,28 @@
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
-<p>Erste Schritte mit Amazon FSX für ONTAP</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="schnelle-schritte">Schnelle Schritte</h2>
-<div class="sectionbody">
-<div class="paragraph">
 <p>Wird Verwendet <a href="https://docs.netapp.com/us-en/cloud-manager-family/" target="_blank" rel="noopener">"BlueXP"</a>, Sie können mit FSX für ONTAP in nur wenigen Schritten beginnen.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Eins"></span> FSX für ONTAP-Arbeitsumgebungen erstellen</div>
-<p>Sie müssen eine Amazon FSX für ONTAP-Arbeitsumgebung erstellen, bevor Sie Volumes hinzufügen. Das müssen Sie <a href="../requirements/task-setting-up-permissions-fsx.html">"Richten Sie eine IAM-Rolle ein, mit der BlueXP SaaS die Rolle übernehmen kann"</a>.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Eins"></span> Einrichten einer IAM-Rolle in AWS</div>
+<p>Um eine Arbeitsumgebung von Amazon FSX für ONTAP zu erstellen oder zu managen, müssen Sie BlueXP Zugangsdaten für AWS Zugangsdaten hinzufügen, indem Sie das ARN einer IAM-Rolle bereitstellen, sodass BlueXP die nötigen Berechtigungen zur Erstellung einer FSX für ONTAP Arbeitsumgebung erteilt. Dazu ist es erforderlich <a href="../requirements/task-setting-up-permissions-fsx.html">"Richten Sie eine IAM-Rolle ein, mit der BlueXP SaaS die Rolle übernehmen kann"</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Zwei"></span> Einen Konnektor erstellen</div>
-<p>Sie müssen eine haben <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html" target="_blank" rel="noopener">"Connector für AWS"</a> So öffnen Sie die FSX für die Arbeitsumgebung von ONTAP: Erstellen Sie Volumes oder führen Sie andere Aktionen durch. Wenn ein Connector erforderlich ist, werden Sie von BlueXP aufgefordert, wenn einer noch nicht hinzugefügt wurde.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Zwei"></span> FSX für ONTAP-Arbeitsumgebungen erstellen</div>
+<p>Unbedingt <a href="../use/task-creating-fsx-working-environment.html">"Amazon FSX für ONTAP-Arbeitsumgebungen erstellen"</a> Vor dem Hinzufügen von Volumes:</p>
 </div>
 <div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Drittens"></span> Volumes hinzufügen</div>
-<p>Sie können mithilfe von BlueXP FSX für ONTAP Volumes erstellen.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Drittens"></span> Connector für AWS erstellen</div>
+<p>Sie müssen eine haben <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#how-to-create-a-connector" target="_blank" rel="noopener">"Connector für AWS"</a> So öffnen Sie die FSX für die Arbeitsumgebung von ONTAP: Erstellen Sie Volumes oder führen Sie andere Aktionen durch. Wenn ein Connector erforderlich ist, werden Sie von BlueXP aufgefordert, wenn dieser nicht bereits aktiv ist.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Vier"></span> Managen Sie Ihre Volumes</div>
-<p>Mit BlueXP können Sie Ihre Volumes verwalten und zusätzliche Services wie Replikation, Cloud Sync und Data Sense konfigurieren.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Vier"></span> Fügen Sie ein Volume hinzu und mounten Sie es</div>
+<p>Das können Sie <a href="../use/task-add-fsx-volumes.html">"FSX für ONTAP Volumes erstellen und mounten"</a> Verwendung von BlueXP.</p>
 </div>
-<div class="ulist">
-<div class="title">Weiterführende Links</div>
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html" target="_blank" rel="noopener">"Erstellen eines Connectors von BlueXP"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html" target="_blank" rel="noopener">"Einführen eines Connectors über den AWS Marketplace"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html" target="_blank" rel="noopener">"Installieren der Connector-Software auf einem Linux-Host"</a></p>
-</li>
-</ul>
-</div>
-</div>
+<div class="paragraph">
+<div class="title">Wie es weiter geht</div>
+<p>Sie können jetzt mit BlueXP Ihre Volumes verwalten und zusätzliche Services wie Replikation, Cloud Sync und Data Sense konfigurieren.</p>
 </div>
 
     </article>
