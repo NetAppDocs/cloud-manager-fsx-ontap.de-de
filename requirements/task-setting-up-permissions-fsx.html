@@ -708,7 +708,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-14 18:28:21 +0000">12/14/2022</time>
+    <time datetime="2023-01-03 15:39:28 +0000">01/03/2023</time>
     
   
 
@@ -739,9 +739,6 @@
 </li>
 <li>
 <p>Klicken Sie unter Zugriffsverwaltung auf <strong>Rollen &gt; Rolle erstellen</strong> und befolgen Sie die Schritte zum Erstellen der Rolle.</p>
-<div class="paragraph">
-<p>Gehen Sie wie folgt vor:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -774,10 +771,12 @@
                 "fsx:*",
                 "ec2:Describe*",
                 "ec2:CreateTags",
+                "iam:CreateServiceLinkedRole",
                 "kms:Describe*",
                 "kms:List*",
                 "kms:CreateGrant",
-                "iam:CreateServiceLinkedRole"
+                "cloudwatch:GetMetricData",
+                "cloudwatch:GetMetricStatistics"
             ],
             "Resource": "*"
         }
@@ -785,8 +784,17 @@
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Sehen Sie sich die Richtlinie zur Bereitstellung von Konnektor über die an <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies">"Seite „BlueXP Policies“"</a>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-fsx-ontap/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+<code>"cloudwatch:GetMetricData"</code> Und <code>"cloudwatch:GetMetricStatistics"</code> Zur Aktivierung erforderlich sind <a href="../use/task-manage-working-environment.html">"Automatisches Kapazitätsmanagement"</a>.
+</td>
+</tr>
+</table>
 </div>
 </li>
 </ul>
